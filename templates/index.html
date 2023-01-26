@@ -1,0 +1,66 @@
+<!--2023.01.23. joyujeong960@gmail.com-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--반응형 웹페이지용-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+
+    <!--icon fontawesome-->
+   <script src="https://kit.fontawesome.com/33dc77ceb8.js" crossorigin="anonymous"></script>
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Dialogflow-->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <title>Chatbot</title>
+</head>
+<body>
+    <div id="start-line">
+        <button class="selection_button" onclick="buttontype()">Button-Type</button>
+        <button class="selection_button" onclick="dialogflow()">Dialogflow</button>
+    </div>
+
+    <!--dialogflow-->
+    <div id="dialogflow">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+                intent="WELCOME"
+                chat-title="피고의 경정 판단"
+                agent-id="ac89094b-c4e1-41cb-8897-deb79bd0e9b9"
+                language-code="ko"
+        ></df-messenger>
+    </div>
+
+    <!--직접 코딩-->
+    <div id="button-type">
+        <div id="chatbox">
+            <div id="box-title"><div id="text-title" class="text">피고의 경정 판단</div></div>
+            <div id="box-content">
+                <div class="content-script" id="script_intro">
+                    이 챗봇은 <br><span style="font-weight:600">[피고의 경정 판단을 위한 순서도]</span>에 의거하여 만들어졌습니다.<br><br>
+                    챗봇 시작을 바라시면<br><span style="font-weight:600">아래의 <span style="color:#8b0427">시작</span> 버튼</span>을 눌러주세요.
+                </div>
+                <!--<div class="content-line"><div class="answer-script">시작</div></div>-->
+            </div>
+            <div id="box-answer">
+                <button type="button" class="button-answer" id="start" onclick="intro_to_script1()">시작</button>
+            </div>
+        </div>
+
+        <div id="chat-click" onclick="show_chat()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#8b0427" class="bi bi-check-circle-fill"
+                 viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="../static/index.js"></script>
+
+</body>
+</html>
